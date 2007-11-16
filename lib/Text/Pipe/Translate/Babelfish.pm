@@ -5,7 +5,7 @@ use warnings;
 use LWP::UserAgent;
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 use base qw(Text::Pipe::Translate);

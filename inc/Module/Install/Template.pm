@@ -4,7 +4,7 @@ package Module::Install::Template;
 use strict;
 use warnings;
 use File::Temp 'tempfile';
-use YAML;
+use Data::Dumper;
 
 
 our $VERSION = '0.04';
@@ -69,7 +69,7 @@ sub process_templates {
     };
 
     my ($fh, $filename) = tempfile();
-    print $fh Dump $config;
+    print $fh Data::Dumper->Dump([$config], ['config']);
     close $fh or die "can't close $filename: $!\n";
 
     $self->makemaker_args(PM_FILTER => "tt_pm_to_blib $filename");

@@ -4,6 +4,15 @@ global:
 releases:
   - author: 'Marcel Gruenauer <marcel@cpan.org>'
     changes:
+      - set the version to 0.02
+      - added Twitter step to .shipit
+      - removed comment from Makefile.PL
+      - re-generated and re-released now that Module-Install-Template uses Data::Dumper instead of YAML; there were CPAN testers failure reports
+    date: 2007-11-16T07:32:18Z
+    tags: []
+    version: 0.02
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
       - original version
     date: 2007-11-14T21:27:30Z
     tags: []
