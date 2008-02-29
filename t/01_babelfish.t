@@ -2,10 +2,10 @@
 
 use warnings;
 use strict;
-use Text::Pipe 'pipe';
+use Text::Pipe 'PIPE';
 use Test::More tests => 1;
 
-my $pipe = pipe 'Translate::Babelfish', from => 'en', to => 'de';
+my $pipe = PIPE 'Translate::Babelfish', from => 'en', to => 'de';
 
 like(
     $pipe->filter('My hovercraft is full of eels.'),

@@ -5,7 +5,7 @@ use warnings;
 use Lingua::Translate;
 
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 use base qw(Text::Pipe::Base);
@@ -54,7 +54,8 @@ Text::Pipe::Translate - Translate text from one language to another
 This pipe segment can translate text from one language to another. To do so it
 uses L<Lingua::Translate>.
 
-Text::Pipe::Translate inherits from L<Text::Pipe::Base>.
+Both source and destination language are to be given in RFC3066 form. See
+L<I18N::LangTags>.
 
 =head1 METHODS
 
@@ -120,16 +121,6 @@ value. If called with a single argument, it sets the value.
 
 Clears the value.
 
-=item from
-
-The source language, in RFC3066 form. See L<I18N::LangTags>. There is no
-default.
-
-=item to
-
-The destination language, in RFC3066 form. See L<I18N::LangTags>. There is no
-default.
-
 =item get_translator
 
 Constructs a translator object for the current settings of C<from()> and
@@ -140,13 +131,75 @@ C<to()> and caches it using the C<translators()> accessor.
 Takes a string and translates it according to the current settings of
 C<from()> and C<to()>.
 
-
 =back
+
+Text::Pipe::Translate inherits from L<Text::Pipe::Base>.
+
+The superclass L<Text::Pipe::Base> defines these methods and functions:
+
+    new(), bit_or(), filter(), init()
+
+The superclass L<Class::Accessor::Complex> defines these methods and
+functions:
+
+    mk_abstract_accessors(), mk_array_accessors(), mk_boolean_accessors(),
+    mk_class_array_accessors(), mk_class_hash_accessors(),
+    mk_class_scalar_accessors(), mk_concat_accessors(),
+    mk_forward_accessors(), mk_hash_accessors(), mk_integer_accessors(),
+    mk_new(), mk_object_accessors(), mk_scalar_accessors(),
+    mk_set_accessors(), mk_singleton()
+
+The superclass L<Class::Accessor> defines these methods and functions:
+
+    _carp(), _croak(), _mk_accessors(), accessor_name_for(),
+    best_practice_accessor_name_for(), best_practice_mutator_name_for(),
+    follow_best_practice(), get(), make_accessor(), make_ro_accessor(),
+    make_wo_accessor(), mk_accessors(), mk_ro_accessors(),
+    mk_wo_accessors(), mutator_name_for(), set()
+
+The superclass L<Class::Accessor::Installer> defines these methods and
+functions:
+
+    install_accessor()
+
+The superclass L<Class::Accessor::Constructor> defines these methods and
+functions:
+
+    _make_constructor(), mk_constructor(), mk_constructor_with_dirty(),
+    mk_singleton_constructor()
+
+The superclass L<Data::Inherited> defines these methods and functions:
+
+    every_hash(), every_list(), flush_every_cache_by_key()
+
+The superclass L<Class::Accessor::Constructor::Base> defines these methods
+and functions:
+
+    STORE(), clear_dirty(), clear_hygienic(), clear_unhygienic(),
+    contains_hygienic(), contains_unhygienic(), delete_hygienic(),
+    delete_unhygienic(), dirty(), dirty_clear(), dirty_set(),
+    elements_hygienic(), elements_unhygienic(), hygienic(),
+    hygienic_clear(), hygienic_contains(), hygienic_delete(),
+    hygienic_elements(), hygienic_insert(), hygienic_is_empty(),
+    hygienic_size(), insert_hygienic(), insert_unhygienic(),
+    is_empty_hygienic(), is_empty_unhygienic(), set_dirty(),
+    size_hygienic(), size_unhygienic(), unhygienic(), unhygienic_clear(),
+    unhygienic_contains(), unhygienic_delete(), unhygienic_elements(),
+    unhygienic_insert(), unhygienic_is_empty(), unhygienic_size()
+
+The superclass L<Tie::StdHash> defines these methods and functions:
+
+    CLEAR(), DELETE(), EXISTS(), FETCH(), FIRSTKEY(), NEXTKEY(), SCALAR(),
+    TIEHASH()
 
 =head1 TAGS
 
 If you talk about this module in blogs, on del.icio.us or anywhere else,
 please use the C<textpipetranslate> tag.
+
+=head1 VERSION 
+                   
+This document describes version 0.03 of L<Text::Pipe::Translate>.
 
 =head1 BUGS AND LIMITATIONS
 
@@ -172,7 +225,7 @@ Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Marcel GrE<uuml>nauer
+Copyright 2007-2008 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

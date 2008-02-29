@@ -4,6 +4,17 @@ global:
 releases:
   - author: 'Marcel Gruenauer <marcel@cpan.org>'
     changes:
+      - set the version to 0.03
+      - updated MANIFEST
+      - slight fix to documentation
+      - updated t/perlcriticrc
+      - moved generated documentation of interited methods to after documentation of this class' methods so the manpage is more readable
+      - "t/01_babelfish.t: Text::Pipe doesn't export pipe() anymore, it's called PIPE() now"
+    date: 2008-02-29T14:32:55Z
+    tags: []
+    version: 0.03
+  - author: 'Marcel Gruenauer <marcel@cpan.org>'
+    changes:
       - set the version to 0.02
       - added Twitter step to .shipit
       - removed comment from Makefile.PL
