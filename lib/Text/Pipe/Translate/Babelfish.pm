@@ -1,35 +1,21 @@
 package Text::Pipe::Translate::Babelfish;
-
 use strict;
 use warnings;
 use LWP::UserAgent;
-
-
-our $VERSION = '0.03';
-
-
+our $VERSION = '0.04';
 use base qw(Text::Pipe::Translate);
-
 
 sub init {
     my $self = shift;
     $self->SUPER::init(@_);
-
     Lingua::Translate::config(
         back_end      => "Babelfish",
-        babelfish_uri => 'http://babelfish.altavista.com/tr?',
+        # babelfish_uri => 'http://babelfish.altavista.com/tr?',
         ua            => LWP::UserAgent->new,
     );
-
 }
-
-
 1;
-
-
 __END__
-
-
 
 =head1 NAME
 
@@ -37,8 +23,8 @@ Text::Pipe::Translate::Babelfish - Translate text using Babelfish
 
 =head1 SYNOPSIS
 
-    use Text::Pipe 'pipe';
-    my $pipe = pipe 'Translate::Babelfish', from => 'en', to => 'de';
+    use Text::Pipe 'PIPE';
+    my $pipe = PIPE 'Translate::Babelfish', from => 'en', to => 'de';
     my $german = $pipe->filter('My hovercraft is full of eels.'),
 
 =head1 DESCRIPTION
@@ -50,9 +36,7 @@ uses L<Lingua::Translate>'s Babelfish backend.
 
 =over 4
 
-
-
-=item init
+=item C<init>
 
 Instructs L<Lingua::Translate> to use the C<Babelfish> backend.
 
@@ -124,21 +108,11 @@ The superclass L<Tie::StdHash> defines these methods and functions:
     CLEAR(), DELETE(), EXISTS(), FETCH(), FIRSTKEY(), NEXTKEY(), SCALAR(),
     TIEHASH()
 
-=head1 TAGS
-
-If you talk about this module in blogs, on del.icio.us or anywhere else,
-please use the C<textpipetranslate> tag.
-
-=head1 VERSION 
-                   
-This document describes version 0.03 of L<Text::Pipe::Translate::Babelfish>.
-
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
-Please report any bugs or feature requests to
-C<<bug-text-pipe-translate@rt.cpan.org>>, or through the web interface at
+Please report any bugs or feature requests through the web interface at
 L<http://rt.cpan.org>.
 
 =head1 INSTALLATION
@@ -149,19 +123,18 @@ See perlmodinstall for information and options on installing Perl modules.
 
 The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
-site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+site near you. Or see L<http://search.cpan.org/dist/Text-Pipe-Translate/>.
 
-=head1 AUTHOR
+=head1 AUTHORS
 
 Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2007-2008 by Marcel GrE<uuml>nauer
+Copyright 2007-2009 by the authors.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
-
 
 =cut
 
