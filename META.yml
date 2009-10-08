@@ -29,4 +29,4 @@ resources:
   homepage: http://search.cpan.org/dist/Text-Pipe-Translate/
   license: http://dev.perl.org/licenses/
   repository: git://github.com/hanekomu/text-pipe-translate.git
-version: 0.04
+version: 0.05

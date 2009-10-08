@@ -2,7 +2,7 @@ package Text::Pipe::Translate::Babelfish;
 use strict;
 use warnings;
 use LWP::UserAgent;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 use base qw(Text::Pipe::Translate);
 
 sub init {

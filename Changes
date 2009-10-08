@@ -1,5 +1,8 @@
 Revision history for Perl extension Text-Pipe-Translate
 
+0.05  Thu 2009.10.08 22:29:11 CEST (Marcel Gruenauer <marcel@cpan.org>)
+     - re-release with fixed inc::Module::Install::ReadmeMarkdownFromPod
+
 0.04  Mon 2009.10.05 13:15:06 CEST (Marcel Gruenauer <marcel@cpan.org>)
      - fixed Babelfish backend; removing the URL helped
      - Changed dist style and Changes back to standard. People didn't like it -

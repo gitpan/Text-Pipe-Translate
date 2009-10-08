@@ -3,7 +3,7 @@ use 5.006;
 use strict;
 use warnings;
 use Lingua::Translate;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 use base qw(Text::Pipe::Base);
 __PACKAGE__->mk_scalar_accessors(qw(from to translators));
 use constant DEFAULTS => (translators => {},);
