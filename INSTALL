@@ -1,9 +1,10 @@
+
 This is the Perl distribution Text-Pipe-Translate.
 
 ## Installation
 
-Text-Pipe-Translate installation is straightforward. If your CPAN shell is
-set up, you should just be able to do
+Text-Pipe-Translate installation is straightforward.
+If your CPAN shell is set up, you should just be able to do
 
     % cpan Text::Pipe::Translate
 
@@ -18,10 +19,9 @@ Then install it:
 
 ## Documentation
 
-Text-Pipe-Translate documentation is available as in POD. So you can do:
+Text-Pipe-Translate documentation is available as in POD.
+So you can do:
 
     % perldoc Text::Pipe::Translate
 
-to read the documentation online with your favorite pager.
-
-Marcel Gruenauer
+to read the documentation with your favorite pager.
